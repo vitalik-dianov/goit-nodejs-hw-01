@@ -17,7 +17,7 @@ async function listContacts() {
 async function getContactById(contactId) {
   try {
     const data = JSON.parse(await fs.readFile(contactPath, 'utf8'));
-    const result = data.find(contact => contact.id !== contactId);
+    const result = data.find(contact => contact.id === contactId);
     console.table(result);
     return;
   } catch (error) {
